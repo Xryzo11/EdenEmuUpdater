@@ -28,7 +28,7 @@ jobs:
       with:
         tag_name: ${{ github.ref_name }}
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 
     - name: Upload install.zip as release asset
       uses: softprops/action-gh-release@v1
@@ -37,7 +37,7 @@ jobs:
         name: install.zip
         asset_path: install.zip
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 
     - name: Upload update.zip as release asset
       uses: softprops/action-gh-release@v1
@@ -46,4 +46,4 @@ jobs:
         name: update.zip
         asset_path: update.zip
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
