@@ -22,12 +22,28 @@ jobs:
     - name: Zip update.bat
       run: zip update.zip update.bat
 
-    - name: Create GitHub Release with assets
+    - name: Create GitHub Release
+      id: create_release
       uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ github.ref_name }}
-        files: |
-          install.zip
-          update.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+
+    - name: Upload install.zip as release asset
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ github.ref_name }}
+        name: install.zip
+        asset_path: install.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+
+    - name: Upload update.zip as release asset
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ github.ref_name }}
+        name: update.zip
+        asset_path: update.zip
       env:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
