@@ -10,7 +10,7 @@ Prerequisites:
 - winget (should be preinstalled with Windows)
 
 Installation:
-- Download and run install.bat
+- Download and run install.bat (best used in an empty directory)
 - Follow the instructions given in the batch file
 
 Usage:
@@ -18,4 +18,4 @@ Usage:
 - Run update.bat to download/update to the newest Eden version
 - Don't add any files or directories to that directory
 - Don't remove or rename any files in that directory
-- Don't remove or rename the 'yuzu-windows-msvc-early-access' directory
+- Don't remove or rename the 'eden-windows-msvc' directory
