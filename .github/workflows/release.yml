@@ -30,20 +30,11 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 
-    - name: Upload install.zip as release asset
+    - name: Upload zip files as release assets
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: ${{ github.ref_name }}
-        name: install.zip
-        asset_path: install.zip
-      env:
-        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-
-    - name: Upload update.zip as release asset
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: ${{ github.ref_name }}
-        name: update.zip
-        asset_path: update.zip
+        files: |
+          install.zip
+          update.zip
       env:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
